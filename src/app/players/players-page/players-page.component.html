@@ -1,1 +1,26 @@
-<p>players-page works!</p>
+<nz-table
+  #playersTable
+  [nzData]="data"
+  nzTableLayout="fixed"
+  [nzPageSizeOptions]="[20]"
+>
+  <thead>
+    <tr>
+      <th *ngFor="let column of listOfColumn">
+        {{ column.title }}
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of playersTable.data">
+      <td>{{ data.first_name }} {{ data.last_name }}</td>
+      <td>
+        {{ data.height_feet | noData : "'" }}
+        @if(data.height_inches){
+        {{ data.height_inches }}" }
+      </td>
+      <td>{{ data.position }}</td>
+      <td>{{ data.team.full_name }}</td>
+    </tr>
+  </tbody>
+</nz-table>

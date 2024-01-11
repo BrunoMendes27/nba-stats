@@ -8,14 +8,4 @@ import { StandingsService } from '../../services/standings.service';
   templateUrl: './standings.component.html',
   styleUrl: './standings.component.scss',
 })
-export class StandingsComponent {
-  constructor(private readonly standingsService: StandingsService) {
-    this.loadStandings();
-  }
-
-  loadStandings(): void {
-    this.standingsService
-      .getStandings$()
-      .subscribe((item) => console.log(item));
-  }
-}
+export class StandingsComponent {}
