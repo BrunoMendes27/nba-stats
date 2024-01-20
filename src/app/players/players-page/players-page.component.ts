@@ -22,23 +22,19 @@ export class PlayersPageComponent implements OnInit {
   readonly listOfColumn: TableHeader[] = [
     {
       title: 'Name',
-      compare: (a: Player, b: Player) =>
-        a.first_name.localeCompare(b.first_name),
       priority: 1,
     },
     {
       title: 'Weight',
-      priority: 3,
+      priority: 2,
     },
     {
       title: 'Position',
-      compare: (a: Player, b: Player) => a.position.localeCompare(b.position),
-      priority: 4,
+      priority: 3,
     },
     {
       title: 'Team',
-      compare: (a: Player, b: Player) => a.team.name.localeCompare(b.team.name),
-      priority: 5,
+      priority: 4,
     },
   ];
 
